@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:keepScreenOn="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/runningExerciseState"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="36sp"
+            app:layout_constraintTop_toBottomOf="@+id/runningExerciseName"
+            android:text="Mountain Climbers"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" app:layout_constraintBottom_toTopOf="@+id/circular_progress"/>
+
+    <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+            android:id="@+id/circular_progress"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:direction="counterclockwise"
+            app:drawDot="false"
+            app:enableProgressAnimation="true"
+            app:progressBackgroundColor="@android:color/transparent"
+            app:progressCap="round"
+            app:progressColor="@color/accent_color"
+            app:progressBackgroundStrokeWidth="5dp"
+            app:startAngle="270"
+            app:textColor="@color/text_color_primary"
+            app:textSize="100sp"
+            app:fillBackground="false"
+            app:gradientType="linear"
+            app:gradientEndColor="@color/delete_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:text="Rest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/runningExerciseName"
+            android:textColor="@color/text_color_primary"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textSize="50sp"/>
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardBackgroundColor="@color/button_color"
+            app:cardCornerRadius="25dp"
+            android:id="@+id/buttonCard" android:layout_marginBottom="50dp">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                    android:id="@+id/runningExerciseStopButton"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:onClick="stopRunningExercise"/>
+            <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:background="@color/text_color_secondary"/>
+            <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/ic_baseline_pause_circle_24"
+                    android:id="@+id/runningExercisePauseButton"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:onClick="PlayPauseRunningExercise"
+                    android:tag="running"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:tint="@color/text_color_primary"
+            android:backgroundTint="@color/accent_color"
+            android:onClick="fabSearchYouTube"
+            android:focusable="true"
+            app:borderWidth="0dp"
+            app:srcCompat="@drawable/ic_baseline_open_in_new_24"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCard"
+            app:layout_constraintTop_toBottomOf="@+id/circular_progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <WebView android:layout_width="0dp"
+             android:layout_height="0dp"
+             android:visibility="gone"
+             android:id="@+id/searchYoutube"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintStart_toStartOf="parent"/>
+
+    <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/viewKonfetti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="100dp"
+            android:clickable="false"
+            android:focusable="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

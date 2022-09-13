@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Workout</string>
+    <string name="set_time_card_button">Set time</string>
+    <string name="image_logo_desc">App logo</string>
+    <string name="image_drag_logo">Drag indicator logo</string>
+
+    <string name="fab_exercise_time">Set exercise time</string>
+    <string name="fab_rest_time">Set rest time</string>
+    <string name="fab_add">Add exercise</string>
+    <string name="fab_start">Start exercise</string>
+    <string name="fab_expand">Expand/compress menu</string>
+    <string name="fab_reset">Reset exercise list</string>
+    <string name="fab_mute">Mute/un-mute text to speech</string>
+    <string name="fab_notification">Turn notification on-off</string>
+</resources>

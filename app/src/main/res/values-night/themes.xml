@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Workout" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="android:textColorSecondary">@color/text_color_secondary</item>
+        <item name="android:textColorPrimary">@color/text_color_secondary</item>
+        <item name="android:colorAccent">@color/accent_color</item>
+        <item name="android:colorPrimary">@color/primary_color</item>
+        <item name="android:colorPrimaryDark">@color/secondary_color</item>
+
+        <item name="android:timePickerStyle">@style/Theme.MyTheme.TimePicker</item>
+    </style>
+
+    <style name="Theme.MyTheme.TimePicker" parent="android:Widget.Material.TimePicker">
+        <item name="android:timePickerMode">clock</item>
+        <item name="android:headerBackground">@color/header_color</item>
+        <item name="android:numbersTextColor">@color/text_color_primary</item>
+        <item name="android:numbersSelectorColor">@color/accent_color</item>
+        <item name="android:numbersBackgroundColor">@color/button_color</item>
+        <item name="android:background">@color/button_color</item>
+        <item name="android:amPmTextColor">@color/delete_color</item>
+    </style>
+</resources>
